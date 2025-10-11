@@ -12,7 +12,6 @@ type Link = {
 };
 
 const links: Link[] = [
-  { name: "About", href: "/about" },
   { name: "Github", href: "https://github.com/paulbgtr/taltech-collectibles" },
 ];
 
