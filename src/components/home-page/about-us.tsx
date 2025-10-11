@@ -14,7 +14,8 @@ export const AboutUs = () => {
           About Us
         </h2>
         <p className="text-lg text-muted-foreground max-w-2xl">
-          Experience TalTech's legacy—playful, sustainable, and collectible!
+          Experience TalTech&apos;s legacy—playful, sustainable, and
+          collectible!
         </p>
       </div>
 
@@ -22,6 +23,9 @@ export const AboutUs = () => {
       <div className="flex flex-wrap gap-2 justify-center mb-16">
         <Badge variant="secondary" className="px-4 py-1.5">
           TalTech Heritage
+        </Badge>
+        <Badge variant="secondary" className="px-4 py-1.5">
+          Open Source
         </Badge>
         <Badge variant="secondary" className="px-4 py-1.5">
           Eco-Friendly
