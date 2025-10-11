@@ -1,6 +1,6 @@
 import { Introduction } from "@/components/home-page/introduction";
 import { CollectiblesShowcase } from "@/components/home-page/collectibles-showcase";
-import { Pillars } from "@/components/home-page/pillars";
+import { AboutUs } from "@/components/home-page/about-us";
 
 export default function HomePage() {
   return (
@@ -9,7 +9,7 @@ export default function HomePage() {
 
       <CollectiblesShowcase />
 
-      <Pillars />
+      <AboutUs />
     </main>
   );
 }
