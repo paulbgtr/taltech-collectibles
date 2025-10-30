@@ -42,57 +42,58 @@
 }
 
 :root {
-    /* Dark steel grey background */
-    --background: oklch(0.15 0.01 270);
-    --foreground: oklch(0.95 0.003 0);
+    /* Happy dark steel background: lighter, more blue-cool */
+    --background: oklch(0.22 0.02 270); /* up from 0.15 */
+    --foreground: oklch(0.97 0.006 265); /* crisper white, slight steel tint */
 
-    /* Card and elements: slightly lighter steel */
-    --card: oklch(0.18 0.01 270);
-    --card-foreground: oklch(0.96 0.003 0);
+    /* Card: brighter, slightly blue-accented */
+    --card: oklch(0.26 0.017 272); /* up from 0.18, gentle blue */
+    --card-foreground: oklch(0.99 0.004 265);
 
-    --popover: oklch(0.18 0.01 270);
-    --popover-foreground: oklch(0.96 0.003 0);
+    --popover: oklch(0.26 0.017 272);
+    --popover-foreground: oklch(0.99 0.004 265);
 
-    /* TalTech Cherry Red */
-    --primary: oklch(0.47 0.18 330); /* close to #C9056F */
-    --primary-foreground: oklch(0.98 0.002 0);
+    /* Primary: boosted TalTech cherry, more lightness */
+    --primary: oklch(0.62 0.18 330); /* much livelier cherry */
+    --primary-foreground: oklch(0.99 0.002 0);
 
-    /* Secondary: muted steel-grey */
-    --secondary: oklch(0.31 0.01 270);
-    --secondary-foreground: oklch(0.98 0.002 0);
+    /* Secondary: lighter, more playful steel-blue */
+    --secondary: oklch(0.43 0.016 270);
+    --secondary-foreground: oklch(0.98 0.008 265);
 
-    /* Muted: mid cool grey */
-    --muted: oklch(0.25 0.015 270);
-    --muted-foreground: oklch(0.75 0.01 270);
+    /* Muted: lighter cool grey for more contrast */
+    --muted: oklch(0.33 0.025 268);
+    --muted-foreground: oklch(0.82 0.015 270);
 
-    /* Accent: sandy brown for warmth */
-    --accent: oklch(0.66 0.07 51); /* close to #F0AD4E */
-    --accent-foreground: oklch(0.98 0.002 0);
+    /* Accent: punch up the sandy brown for warmth and energy */
+    --accent: oklch(0.78 0.1 51); /* warmer, sunnier brown */
+    --accent-foreground: oklch(0.99 0.003 270);
 
-    /* Destructive - bright red */
-    --destructive: oklch(0.56 0.21 25);
-    --border: oklch(0.35 0.01 270 / 20%);
-    --input: oklch(0.25 0.01 270 / 22%);
-    --ring: oklch(0.35 0.01 270);
+    /* Destructive: brighter but not neon red */
+    --destructive: oklch(0.68 0.22 25);
 
-    /* Chart colors: inspired by TalTech palette */
-    --chart-1: oklch(0.47 0.18 330); /* cherry red */
-    --chart-2: oklch(0.36 0.03 265); /* steel grey */
-    --chart-3: oklch(0.66 0.07 51); /* sandy brown */
-    --chart-4: oklch(0.45 0.08 155); /* teal blue accent */
-    --chart-5: oklch(0.75 0.01 270); /* lighter steel */
+    --border: oklch(0.42 0.015 270 / 25%);
+    --input: oklch(0.33 0.017 272 / 22%);
+    --ring: oklch(0.42 0.01 270);
 
-    /* Sidebar: steel grey */
-    --sidebar: oklch(0.18 0.01 270);
-    --sidebar-foreground: oklch(0.96 0.003 0);
-    --sidebar-primary: oklch(0.47 0.18 330);
-    --sidebar-primary-foreground: oklch(0.96 0.003 0);
-    --sidebar-accent: oklch(0.31 0.01 270);
-    --sidebar-accent-foreground: oklch(0.96 0.003 0);
-    --sidebar-border: oklch(0.35 0.01 270 / 20%);
-    --sidebar-ring: oklch(0.35 0.01 270);
+    /* Chart colors: more cheerful but on theme */
+    --chart-1: oklch(0.62 0.18 330); /* lively cherry */
+    --chart-2: oklch(0.44 0.025 272); /* uplifted steel-blue */
+    --chart-3: oklch(0.78 0.1 51); /* boosted sandy brown */
+    --chart-4: oklch(0.56 0.18 155); /* brighter teal */
+    --chart-5: oklch(0.86 0.012 270); /* lightest steel highlight */
 
-    --radius: 16px;
+    /* Sidebar: match card for lighter look */
+    --sidebar: oklch(0.26 0.017 272);
+    --sidebar-foreground: oklch(0.99 0.004 265);
+    --sidebar-primary: oklch(0.62 0.18 330);
+    --sidebar-primary-foreground: oklch(0.99 0.004 265);
+    --sidebar-accent: oklch(0.43 0.016 270);
+    --sidebar-accent-foreground: oklch(0.98 0.008 265);
+    --sidebar-border: oklch(0.42 0.015 270 / 25%);
+    --sidebar-ring: oklch(0.42 0.015 270);
+
+    --radius: 16px; /* rounded, friendly */
 }
 
 @layer base {
