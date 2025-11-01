@@ -19,7 +19,7 @@ export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="w-full backdrop-blur border-b shadow-md">
+    <header className="w-full backdrop-blur border-b">
       <nav className="max-w-5xl mx-auto px-4 flex items-center justify-between h-16">
         {/* Logo and Title */}
         <Link href="/">
