@@ -42,58 +42,58 @@
 }
 
 :root {
-    /* Happy dark steel background: lighter, more blue-cool */
-    --background: oklch(0.22 0.02 270); /* up from 0.15 */
-    --foreground: oklch(0.97 0.006 265); /* crisper white, slight steel tint */
+    /* Latte creamy background */
+    --background: oklch(0.95 0.009 90); /* Creamy, subtle yellow tint */
+    --foreground: oklch(0.19 0.012 265); /* Soft charcoal text */
 
-    /* Card: brighter, slightly blue-accented */
-    --card: oklch(0.26 0.017 272); /* up from 0.18, gentle blue */
-    --card-foreground: oklch(0.99 0.004 265);
+    /* Card: pastel peachy-tan */
+    --card: oklch(0.98 0.013 81); /* Slight yellow-beige */
+    --card-foreground: oklch(0.14 0.007 265); /* Deep steel-charcoal */
 
-    --popover: oklch(0.26 0.017 272);
-    --popover-foreground: oklch(0.99 0.004 265);
+    --popover: oklch(0.98 0.013 81);
+    --popover-foreground: oklch(0.14 0.007 265);
 
-    /* Primary: boosted TalTech cherry, more lightness */
-    --primary: oklch(0.62 0.18 330); /* much livelier cherry */
-    --primary-foreground: oklch(0.99 0.002 0);
+    /* Primary: Catppuccin Rosewater/Pink */
+    --primary: oklch(0.78 0.15 333); /* Rosewater */
+    --primary-foreground: oklch(0.15 0.01 265); /* Deep steel-charcoal */
 
-    /* Secondary: lighter, more playful steel-blue */
-    --secondary: oklch(0.43 0.016 270);
-    --secondary-foreground: oklch(0.98 0.008 265);
+    /* Secondary: Lavender-blue (Latte "Lavender") */
+    --secondary: oklch(0.88 0.03 275); /* Pastel Lavender */
+    --secondary-foreground: oklch(0.19 0.01 265);
 
-    /* Muted: lighter cool grey for more contrast */
-    --muted: oklch(0.33 0.025 268);
-    --muted-foreground: oklch(0.82 0.015 270);
+    /* Muted: gentle cool gray */
+    --muted: oklch(0.93 0.018 270); /* Mist gray-blue */
+    --muted-foreground: oklch(0.34 0.008 270);
 
-    /* Accent: punch up the sandy brown for warmth and energy */
-    --accent: oklch(0.78 0.1 51); /* warmer, sunnier brown */
-    --accent-foreground: oklch(0.99 0.003 270);
+    /* Accent: Latte yellow/tan for warmth and pop */
+    --accent: oklch(0.97 0.12 90); /* Warm pastel yellow */
+    --accent-foreground: oklch(0.19 0.01 265);
 
-    /* Destructive: brighter but not neon red */
-    --destructive: oklch(0.68 0.22 25);
+    /* Destructive: bright but pleasant red */
+    --destructive: oklch(0.75 0.21 27); /* Catppuccin "Red" */
 
-    --border: oklch(0.42 0.015 270 / 25%);
-    --input: oklch(0.33 0.017 272 / 22%);
-    --ring: oklch(0.42 0.01 270);
+    --border: oklch(0.59 0.013 90 / 30%); /* Soft cream border */
+    --input: oklch(0.93 0.018 270 / 18%);
+    --ring: oklch(0.59 0.013 90);
 
-    /* Chart colors: more cheerful but on theme */
-    --chart-1: oklch(0.62 0.18 330); /* lively cherry */
-    --chart-2: oklch(0.44 0.025 272); /* uplifted steel-blue */
-    --chart-3: oklch(0.78 0.1 51); /* boosted sandy brown */
-    --chart-4: oklch(0.56 0.18 155); /* brighter teal */
-    --chart-5: oklch(0.86 0.012 270); /* lightest steel highlight */
+    /* Charts: Pastel varietals inspired by Latte */
+    --chart-1: oklch(0.78 0.15 333); /* Rosewater */
+    --chart-2: oklch(0.88 0.03 275); /* Lavender */
+    --chart-3: oklch(0.97 0.12 90); /* Latte yellow */
+    --chart-4: oklch(0.68 0.16 175); /* Latte teal */
+    --chart-5: oklch(0.89 0.009 270); /* Surface highlight */
 
-    /* Sidebar: match card for lighter look */
-    --sidebar: oklch(0.26 0.017 272);
-    --sidebar-foreground: oklch(0.99 0.004 265);
-    --sidebar-primary: oklch(0.62 0.18 330);
-    --sidebar-primary-foreground: oklch(0.99 0.004 265);
-    --sidebar-accent: oklch(0.43 0.016 270);
-    --sidebar-accent-foreground: oklch(0.98 0.008 265);
-    --sidebar-border: oklch(0.42 0.015 270 / 25%);
-    --sidebar-ring: oklch(0.42 0.015 270);
+    /* Sidebar: extra-bright version of card */
+    --sidebar: oklch(0.98 0.013 81);
+    --sidebar-foreground: oklch(0.14 0.007 265);
+    --sidebar-primary: oklch(0.78 0.15 333);
+    --sidebar-primary-foreground: oklch(0.14 0.007 265);
+    --sidebar-accent: oklch(0.88 0.03 275);
+    --sidebar-accent-foreground: oklch(0.19 0.01 265);
+    --sidebar-border: oklch(0.59 0.013 90 / 30%);
+    --sidebar-ring: oklch(0.59 0.013 90);
 
-    --radius: 16px; /* rounded, friendly */
+    --radius: 16px;
 }
 
 @layer base {
