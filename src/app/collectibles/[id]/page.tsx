@@ -5,7 +5,7 @@ import { MDXComponents } from "mdx/types";
 import ModelViewer from "@/components/model-viewer";
 
 const CustomH2 = ({ children }: { children: React.ReactNode }) => (
-  <h2 className="text-4xl font-bold mb-4">{children}</h2>
+  <h2 className="text-5xl font-bold mb-4">{children}</h2>
 );
 
 const overrideComponents = {
@@ -37,9 +37,9 @@ export default async function Page({
   const SelectedComponent = componentMap[id];
 
   return (
-    <div className="px-4 py-10 flex flex-col items-center min-h-[80vh]">
-      <section className="grid items-center gap-10 lg:grid-cols-2 max-w-6xl">
-        <div>
+    <div className="flex flex-col items-center min-h-[80vh] px-4 py-10">
+      <section className="grid lg:grid-cols-2 gap-10 items-stretch max-w-6xl w-full">
+        <div className="flex flex-col justify-center">
           {SelectedComponent ? (
             <SelectedComponent components={overrideComponents} />
           ) : (
