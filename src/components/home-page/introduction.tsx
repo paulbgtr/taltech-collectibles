@@ -9,7 +9,7 @@ export const Introduction = () => {
         Museum in Your Pocket
       </Badge>
 
-      <h1 className="text-5xl md:text-6xl font-extrabold mb-4 drop-shadow-md">
+      <h1 className="text-5xl md:text-7xl font-black mb-4 drop-shadow-md">
         TalTech Collectible Keychains
       </h1>
 

@@ -2,6 +2,12 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Sparkles, Leaf, Gift, Users } from "lucide-react";
 
+const Tag = ({ children }: { children: React.ReactNode }) => (
+  <Badge variant="secondary" className="px-4 py-1.5 font-bold">
+    {children}
+  </Badge>
+);
+
 export const AboutUs = () => {
   return (
     <section
@@ -10,8 +16,8 @@ export const AboutUs = () => {
     >
       {/* Header Section */}
       <div className="text-center space-y-4 mb-12">
-        <h2 id="about-title" className="text-5xl font-extrabold tracking-tight">
-          About Us
+        <h2 id="about-title" className="text-7xl font-black tracking-tight">
+          About
         </h2>
         <p className="text-lg text-muted-foreground max-w-2xl">
           Experience TalTech&apos;s legacy—playful, sustainable, and
@@ -21,21 +27,11 @@ export const AboutUs = () => {
 
       {/* Tags */}
       <div className="flex flex-wrap gap-2 justify-center mb-16">
-        <Badge variant="secondary" className="px-4 py-1.5">
-          TalTech Heritage
-        </Badge>
-        <Badge variant="secondary" className="px-4 py-1.5">
-          Open Source
-        </Badge>
-        <Badge variant="secondary" className="px-4 py-1.5">
-          Eco-Friendly
-        </Badge>
-        <Badge variant="secondary" className="px-4 py-1.5">
-          Collectible Fun
-        </Badge>
-        <Badge variant="secondary" className="px-4 py-1.5">
-          Digital Twist
-        </Badge>
+        <Tag>TalTech Heritage</Tag>
+        <Tag>Open Source</Tag>
+        <Tag>Eco-Friendly</Tag>
+        <Tag>Collectible Fun</Tag>
+        <Tag>Digital Twist</Tag>
       </div>
 
       {/* Feature Cards */}
@@ -56,7 +52,7 @@ export const AboutUs = () => {
           </div>
           <h3 className="font-bold text-lg">Eco Packaging</h3>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Biodegradable materials with QR-powered experiences
+            Biodegradable materials with NFC-powered experiences
           </p>
         </Card>
 
