@@ -45,7 +45,7 @@ export const CollectiblesShowcase = () => {
           href={`/collectibles/${item.id}`}
           className="transition duration-300 hover:opacity-80 hover:scale-105"
         >
-          <Card className="h-full rounded-3xl border-none shadow-xl transition-all duration-300 backdrop-blur-md group">
+          <Card className="h-full border-none transition-all duration-300 backdrop-blur-md group">
             <CardHeader className="flex flex-col items-center pb-0">
               <div className="h-28 w-28 rounded-2xl bg-gradient-to-b from-primary/30 to-muted flex items-center justify-center mb-4 shadow transition-transform text-6xl">
                 <span role="img" aria-label={item.name}>
