@@ -1,16 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import type { Collectible } from "@/types/collectible";
-import { Star } from "lucide-react";
 import Link from "next/link";
-
-const rarityStyles = {
-  Rare: "bg-gradient-to-br from-yellow-300 to-amber-400 text-yellow-900 border-yellow-300 shadow-md",
-  Uncommon:
-    "bg-gradient-to-br from-blue-200 to-blue-400 text-blue-900 border-blue-300 shadow-md",
-  Common:
-    "bg-gradient-to-br from-gray-200 to-gray-300 text-gray-700 border-gray-200 shadow-sm",
-};
+import { RarityBadge } from "../rarity-badge";
 
 const collectibles: Collectible[] = [
   {
@@ -18,21 +9,21 @@ const collectibles: Collectible[] = [
     name: "Juulius Mascot",
     description:
       "TalTech’s beloved mascot as a pocket-sized companion—each tells a piece of campus lore.",
-    rarity: "Rare",
+    rarity: "rare",
   },
   {
     id: "library",
     name: "Library Building",
     description:
       "A stylized miniature of the iconic library, referencing its cosmic architecture.",
-    rarity: "Uncommon",
+    rarity: "uncommon",
   },
   {
     id: "logo",
     name: "TalTech Logo",
     description:
       "Classic circular logo—timeless, minimal, and highly collectible.",
-    rarity: "Common",
+    rarity: "common",
   },
 ];
 
@@ -59,21 +50,7 @@ export const CollectiblesShowcase = () => {
               <CardTitle className="text-2xl font-bold text-center">
                 {item.name}
               </CardTitle>
-              <Badge
-                className={`mt-2 px-4 py-1 border-2 font-semibold text-sm flex items-center gap-1 ${rarityStyles[item.rarity]}`}
-              >
-                <Star
-                  className={
-                    item.rarity === "Rare"
-                      ? "text-yellow-500"
-                      : item.rarity === "Uncommon"
-                        ? "text-blue-400"
-                        : "text-gray-500"
-                  }
-                  size={16}
-                />
-                {item.rarity}
-              </Badge>
+              <RarityBadge rarity={item.rarity} />
             </CardHeader>
             <CardContent>
               <p className="text-base text-center text-muted-foreground mt-2">
