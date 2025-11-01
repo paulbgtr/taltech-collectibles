@@ -12,7 +12,7 @@ export default function ModelViewer({ modelUrl }: { modelUrl: string }) {
   return (
     <Canvas
       style={{
-        width: "50%",
+        width: "100%",
         height: "400px",
         background: "oklch(0.22 0.02 270)",
       }}
