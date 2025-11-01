@@ -1,22 +1,21 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import type { Collectible } from "@/types/collectible";
 import Link from "next/link";
 import { RarityBadge } from "../rarity-badge";
 
-const collectibles: Collectible[] = [
+const collectibles = [
   {
     id: "juulius",
     name: "Juulius Mascot",
     description:
       "TalTech’s beloved mascot as a pocket-sized companion—each tells a piece of campus lore.",
-    rarity: "rare",
+    rarity: "epic",
   },
   {
     id: "library",
     name: "Library Building",
     description:
       "A stylized miniature of the iconic library, referencing its cosmic architecture.",
-    rarity: "uncommon",
+    rarity: "rare",
   },
   {
     id: "logo",
