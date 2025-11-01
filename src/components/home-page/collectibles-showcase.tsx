@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
 import { RarityBadge } from "../rarity-badge";
+import { Rarity } from "@/types/collectible";
 
 const collectibles = [
   {
@@ -49,7 +50,7 @@ export const CollectiblesShowcase = () => {
               <CardTitle className="text-2xl font-bold text-center">
                 {item.name}
               </CardTitle>
-              <RarityBadge rarity={item.rarity} />
+              <RarityBadge rarity={item.rarity as Rarity} />
             </CardHeader>
             <CardContent>
               <p className="text-base text-center text-muted-foreground mt-2">
