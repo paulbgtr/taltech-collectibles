@@ -1,16 +1,17 @@
-import Juulius from "@/markdown/collectibles/juulius.md";
-import Library from "@/markdown/collectibles/library.md";
-import Logo from "@/markdown/collectibles/logo.md";
+import Juulius, {
+  metadata as juuliusMetadata,
+} from "@/markdown/collectibles/juulius.mdx";
+import Library, {
+  metadata as libraryMetadata,
+} from "@/markdown/collectibles/library.mdx";
+import Logo, {
+  metadata as logoMetadata,
+} from "@/markdown/collectibles/logo.mdx";
 import { MDXComponents } from "mdx/types";
 import ModelViewer from "@/components/model-viewer";
-
-const CustomH2 = ({ children }: { children: React.ReactNode }) => (
-  <h2 className="text-5xl font-bold mb-4">{children}</h2>
-);
-
-const overrideComponents = {
-  h2: CustomH2,
-};
+import { RarityBadge } from "@/components/rarity-badge";
+import { Rarity } from "@/types/collectible";
+import { CollectibleMetadata } from "@/types/collectible-metadata";
 
 const getModelUrl = (id: string) => {
   if (id === "juulius") {
@@ -28,6 +29,12 @@ const componentMap: Record<
   logo: Logo,
 };
 
+const collectiblesMap: Record<string, CollectibleMetadata> = {
+  juulius: juuliusMetadata,
+  library: libraryMetadata,
+  logo: logoMetadata,
+};
+
 export default async function Page({
   params,
 }: {
@@ -41,7 +48,11 @@ export default async function Page({
       <section className="grid lg:grid-cols-2 gap-10 items-stretch max-w-6xl w-full">
         <div className="flex flex-col justify-center">
           {SelectedComponent ? (
-            <SelectedComponent components={overrideComponents} />
+            <div className="flex flex-col gap-4">
+              <h2 className="text-5xl font-bold">{collectiblesMap[id].name}</h2>
+              <RarityBadge rarity={collectiblesMap[id].rarity as Rarity} />
+              <SelectedComponent />
+            </div>
           ) : (
             <div>Collectible not found.</div>
           )}
