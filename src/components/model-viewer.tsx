@@ -14,7 +14,7 @@ export default function ModelViewer({ modelUrl }: { modelUrl: string }) {
       style={{
         width: "100%",
         height: "400px",
-        background: "oklch(0.22 0.02 270)",
+        background: "oklch(0.95 0.009 90)",
       }}
     >
       <Stage environment="city" intensity={0.8}>
