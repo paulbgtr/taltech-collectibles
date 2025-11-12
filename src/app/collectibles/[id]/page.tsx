@@ -33,40 +33,60 @@ export default async function Page({
   }
 
   return (
-    <div className="flex flex-col items-center md:py-20 min-h-[80vh] px-4 py-10">
-      {/* Main Info and Model */}
-      <section className="w-full max-w-6xl grid lg:grid-cols-2 gap-12 mb-26">
-        {/* Info Column */}
-        <div className="flex flex-col justify-center gap-6">
-          <h2 className="text-7xl md:text-8xl font-black tracking-tight">
-            {collectible.name}
-          </h2>
-          <RarityBadge size="md" rarity={collectible.rarity as Rarity} />
-          <p className="text-lg">{collectible.description}</p>
-        </div>
+    <div className="flex flex-col min-h-screen">
+      {/* Hero Section - Mobile First */}
+      <section className="relative bg-gradient-to-b from-background to-muted/20 px-4 py-8 md:py-12">
+        <div className="max-w-7xl mx-auto">
+          {/* Title and Badge - Compact for mobile */}
+          <div className="text-center mb-6 space-y-3">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight">
+              {collectible.name}
+            </h1>
+            <div className="flex justify-center">
+              <RarityBadge size="sm" rarity={collectible.rarity as Rarity} />
+            </div>
+          </div>
 
-        <div className="flex justify-center items-center">
-          <ModelViewer modelUrl={getModelUrl(id)} />
+          {/* 3D Model Viewer - Full width on mobile */}
+          <div className="w-full max-w-2xl mx-auto">
+            <ModelViewer modelUrl={getModelUrl(id)} />
+          </div>
         </div>
-
-        <Separator />
       </section>
 
-      <section className="w-full max-w-4xl space-y-12">
-        <div>
-          <h2 className="text-5xl font-black mb-4">A Bit of History</h2>
-          <p className="text-lg leading-relaxed text-foreground">
-            {collectible.history}
-          </p>
-        </div>
+      {/* Description Section - Clean and readable */}
+      <section className="px-4 py-8 md:py-12">
+        <div className="max-w-2xl mx-auto space-y-6">
+          <div className="space-y-4">
+            <h2 className="text-2xl sm:text-3xl font-bold">About</h2>
+            <p className="text-base sm:text-lg leading-relaxed text-muted-foreground">
+              {collectible.description}
+            </p>
+          </div>
 
-        <Image
-          src={getImageUrl(id)}
-          alt={collectible.name}
-          className="rounded-lg"
-          width={1000}
-          height={1000}
-        />
+          <Separator className="my-8" />
+
+          {/* History Section with Image */}
+          <div className="space-y-6">
+            <h2 className="text-2xl sm:text-3xl font-bold">History</h2>
+
+            {/* Image - Responsive and accessible */}
+            <div className="relative aspect-video sm:aspect-[4/3] md:aspect-[16/10] w-full overflow-hidden rounded-xl bg-muted">
+              <Image
+                src={getImageUrl(id)}
+                alt={`Historical image of ${collectible.name}`}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                priority
+              />
+            </div>
+
+            <p className="text-base sm:text-lg leading-relaxed text-muted-foreground">
+              {collectible.history}
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   );
