@@ -1,54 +1,64 @@
-import { Star } from "lucide-react";
 import { Badge } from "./ui/badge";
 import { Rarity } from "../types/collectible";
-import { capitalizeFirst } from "@/lib/utils";
-
-const rarityStyles: Record<Rarity, string> = {
-  epic: "bg-gradient-to-br from-purple-300 to-rose-400 text-purple-900 border-rose-300 shadow-md",
-  rare: "bg-gradient-to-br from-blue-200 to-blue-400 text-blue-900 border-blue-300 shadow-md",
-  common:
-    "bg-gradient-to-br from-gray-200 to-gray-300 text-gray-700 border-gray-200 shadow-sm",
-};
+import { cn } from "@/lib/utils";
 
 type Size = "sm" | "md" | "lg";
 
-const getSize = (size?: Size) => {
-  const sm = "px-4 py-1 text-sm";
-
-  switch (size) {
-    case "sm":
-      return sm;
-    case "md":
-      return "px-6 py-2 text-md";
-    case "lg":
-      return "px-8 py-3 text-lg";
-    default:
-      return sm;
+const rarityStyles: Record<
+  Rarity,
+  {
+    badge: string;
+    dot: string;
+    label: string;
   }
+> = {
+  epic: {
+    badge: "border-purple-500/50 text-purple-600 bg-purple-500/5",
+    dot: "bg-purple-500",
+    label: "Epic",
+  },
+  rare: {
+    badge: "border-sky-500/50 text-sky-600 bg-sky-500/5",
+    dot: "bg-sky-500",
+    label: "Rare",
+  },
+  common: {
+    badge: "border-muted-foreground/30 text-muted-foreground bg-muted/40",
+    dot: "bg-muted-foreground/70",
+    label: "Common",
+  },
+};
+
+const sizeStyles: Record<Size, string> = {
+  sm: "px-2.5 py-0.5 text-[0.65rem]",
+  md: "px-3 py-0.5 text-xs",
+  lg: "px-3.5 py-1 text-sm",
 };
 
 export const RarityBadge = ({
   rarity,
-  size,
+  size = "sm",
 }: {
   rarity: Rarity;
   size?: Size;
 }) => {
+  const config = rarityStyles[rarity];
+
   return (
     <Badge
-      className={`mt-2 border-2 rounded-full font-bold flex items-center gap-1 ${rarityStyles[rarity]} ${getSize(size)}`}
+      variant="outline"
+      className={cn(
+        "inline-flex items-center gap-1.5 rounded-full border font-medium",
+        "uppercase tracking-[0.16em] bg-background/80 backdrop-blur-sm",
+        sizeStyles[size],
+        config.badge,
+      )}
     >
-      <Star
-        className={
-          rarity === "epic"
-            ? "text-purple-500"
-            : rarity === "rare"
-              ? "text-blue-400"
-              : "text-gray-500"
-        }
-        size={16}
+      <span
+        className={cn("h-1.5 w-1.5 rounded-full", config.dot)}
+        aria-hidden="true"
       />
-      {capitalizeFirst(rarity)}
+      <span>{config.label}</span>
     </Badge>
   );
 };
