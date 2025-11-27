@@ -8,58 +8,89 @@ const collectibles = [
     id: "juulius",
     name: "Juulius Mascot",
     description:
-      "TalTech’s beloved mascot as a pocket-sized companion—each tells a piece of campus lore.",
+      "TalTech’s mascot as a pocket-sized companion, tied to campus lore and student stories.",
     rarity: "epic",
   },
   {
     id: "library",
     name: "Library Building",
     description:
-      "A stylized miniature of the iconic library, referencing its cosmic architecture.",
+      "A miniature nod to the library’s brutalist silhouette and its role as a quiet orbit for students.",
     rarity: "rare",
   },
   {
     id: "logo",
     name: "TalTech Logo",
     description:
-      "Classic circular logo—timeless, minimal, and highly collectible.",
+      "Minimal, recognizable, and designed for people who actually know where it comes from.",
     rarity: "common",
   },
 ];
 
+const getCollectibleEmoji = (id: string) => {
+  switch (id) {
+    case "juulius":
+      return "🦊";
+    case "library":
+      return "🏛️";
+    case "logo":
+      return "🟣";
+    default:
+      return "🔹";
+  }
+};
+
 export const CollectiblesShowcase = () => {
   return (
-    <section className="w-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-      {collectibles.map((item) => (
-        <Link
-          key={item.name}
-          href={`/collectibles/${item.id}`}
-          className="transition duration-300 hover:opacity-80 hover:scale-105"
-        >
-          <Card className="h-full border-none transition-all duration-300 backdrop-blur-md group">
-            <CardHeader className="flex flex-col items-center pb-0">
-              <div className="h-28 w-28 rounded-2xl bg-gradient-to-b from-primary/30 to-muted flex items-center justify-center mb-4 shadow transition-transform text-6xl">
-                <span role="img" aria-label={item.name}>
-                  {item.name === "Juulius Mascot"
-                    ? "🦊"
-                    : item.name === "Library Building"
-                      ? "🏛️"
-                      : "🟣"}
-                </span>
-              </div>
-              <CardTitle className="text-2xl font-bold text-center">
-                {item.name}
-              </CardTitle>
-              <RarityBadge rarity={item.rarity as Rarity} />
-            </CardHeader>
-            <CardContent>
-              <p className="text-base text-center text-muted-foreground mt-2">
-                {item.description}
-              </p>
-            </CardContent>
-          </Card>
-        </Link>
-      ))}
+    <section className="w-full max-w-5xl mx-auto mb-16 px-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        {collectibles.map((item) => (
+          <Link
+            key={item.id}
+            href={`/collectibles/${item.id}`}
+            className="group block rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          >
+            <Card className="h-full flex flex-col rounded-2xl border border-border/70 bg-card/85 backdrop-blur-sm shadow-sm transition-all duration-200 group-hover:-translate-y-1 group-hover:shadow-lg">
+              <CardHeader className="flex flex-col gap-4 pb-3">
+                <div className="flex items-start justify-between gap-3">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-11 w-16 items-center justify-center rounded-full bg-gradient-to-br from-muted to-background border border-border/60 text-xl">
+                      <span aria-hidden="true">
+                        {getCollectibleEmoji(item.id)}
+                      </span>
+                      <span className="sr-only">{item.name} icon</span>
+                    </div>
+
+                    <div className="space-y-1">
+                      <CardTitle className="text-lg font-semibold tracking-tight">
+                        {item.name}
+                      </CardTitle>
+                      <p className="text-[0.7rem] uppercase tracking-[0.18em] text-muted-foreground">
+                        TalTech collectible
+                      </p>
+                    </div>
+                  </div>
+
+                  <RarityBadge rarity={item.rarity as Rarity} />
+                </div>
+              </CardHeader>
+
+              <CardContent className="flex-1 flex flex-col justify-between pt-0">
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {item.description}
+                </p>
+
+                <div className="mt-4 flex items-center text-xs font-medium text-primary group-hover:text-primary/90">
+                  <span>View collectible</span>
+                  <span className="ml-1.5 translate-x-0 group-hover:translate-x-0.5 transition-transform">
+                    →
+                  </span>
+                </div>
+              </CardContent>
+            </Card>
+          </Link>
+        ))}
+      </div>
     </section>
   );
 };
