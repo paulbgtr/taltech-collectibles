@@ -20,8 +20,12 @@ const getImageUrl = (id: string) => {
   return `/collectibles/${id}.jpg`;
 };
 
-export default function Page({ params }: { params: { id: string } }) {
-  const { id } = params;
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
   const collectible = collectibles.find((c) => c.id === id);
 
   if (!collectible) {
