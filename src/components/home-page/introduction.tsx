@@ -26,6 +26,11 @@ export const Introduction = () => {
               <span className="font-semibold">campus history</span> in your
               pocket.
             </p>
+
+            <p className="text-xs sm:text-sm text-muted-foreground/80 font-mono max-w-xl">
+              Each physical keychain carries its own creator code, revealed only
+              when scanned.
+            </p>
           </div>
 
           <div className="flex flex-wrap gap-4 text-xs sm:text-sm text-muted-foreground">
