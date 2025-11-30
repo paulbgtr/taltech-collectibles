@@ -171,6 +171,7 @@ export const CollectibleClient = ({ collectible }: Props) => {
               rarity={collectible.rarity}
               id={collectible.id}
               meta={collectible.meta}
+              creatorCode={creatorCode}
             />
           </div>
 
