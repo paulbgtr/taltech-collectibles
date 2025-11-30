@@ -5,27 +5,66 @@ export const collectibles: Collectible[] = [
     id: "juulius",
     name: "Juulius Mascot Keychain",
     rarity: "epic",
-    description:
-      "Meet Juulius, TalTech’s beloved fox mascot. This rare collectible miniaturizes the campus icon, letting you carry a pocket-sized piece of TalTech spirit and history. Each Juulius keychain links to a unique story from campus lore—scan the QR code to uncover a special chapter of university tradition.",
-    history:
-      "Juulius was born in 2019 as a symbol of innovation and creativity. He was designed by a team of students who wanted to create a mascot that represented the university’s spirit of innovation and forward-thinking. Since then, Juulius has become an iconic figure on campus, appearing in countless photos and videos. He is often seen wearing a TalTech shirt and holding a TalTech keychain, symbolizing the university’s commitment to innovation and excellence.",
+
+    tagline: "TalTech’s fox mascot, miniaturized.",
+    blurb:
+      "Carry a piece of campus spirit. Each Juulius keychain links to a digital story unlocked via NFC.",
+
+    meta: {
+      introduced: 2019,
+      designedBy: "TalTech student team",
+      material: "PLA + NFC tag",
+    },
+
+    story: [
+      "Created in 2019 to represent TalTech’s inventive and playful character.",
+      "Designed by a student team aiming for a mascot that felt modern and friendly.",
+      "Adopted into campus culture through events, merch, and student media.",
+      "Became an unofficial symbol of ‘Tech spirit’ across student communities.",
+    ],
   },
   {
     id: "library",
-    name: "TalTech Library Building Keychain",
+    name: "Library Building Keychain",
     rarity: "rare",
-    description:
-      "his uncommon collectible captures TalTech’s iconic library in miniature, celebrating its distinctive architecture inspired by cosmic and futuristic themes. The keychain is more than a token—it’s your gateway to discovering hidden facts and stories about the heart of campus research. Scan to explore what makes this building so legendary.",
-    history:
-      "The TalTech Library was built in 2010 as a symbol of the university’s commitment to knowledge and innovation. Its design was inspired by the cosmos and futuristic themes, reflecting the university’s vision of a future where technology and science are intertwined. The library is a hub of learning and research, with a collection of over 1 million books and digital resources.",
+
+    tagline: "A pocket-sized version of TalTech’s quiet core.",
+    blurb:
+      "This keychain echoes the silhouette of TalTech’s library building – the place where projects are finished, deadlines are survived, and ideas occasionally happen on purpose.",
+
+    meta: {
+      role: "Campus library & study hub",
+      designedBy: "Architects commissioned by TalTech",
+      material: "PLA + NFC tag",
+    },
+
+    story: [
+      "The library is one of the main anchors of the TalTech campus, used daily by students across faculties.",
+      "Its layered geometry and large windows inspired the simplified form of this keychain.",
+      "For many students, the library is where group work, late-night study sessions, and exam prep actually happen.",
+      "This collectible connects the familiar physical building with a digital story you can explore anywhere.",
+    ],
   },
   {
     id: "logo",
     name: "TalTech Logo Keychain",
     rarity: "common",
-    description:
-      "Show off your TalTech pride with this classic, common collectible featuring the university’s circular logo. Timeless and minimal, it’s perfect for students and alumni alike. Behind every logo is a piece of the university’s rich legacy—scan to unlock the story of TalTech’s emblem and its place in modern campus life.",
-    history:
-      "The TalTech logo is more than just a mark—its circular form symbolizes unity and forward-thinking, first adopted in 2018 after the university rebranded to reflect modern innovation...",
+
+    tagline: "The classic TalTech mark, made pocket-sized.",
+    blurb:
+      "A minimal keychain featuring the TalTech logo for students, staff, and alumni who actually know where it comes from.",
+
+    meta: {
+      role: "Official university wordmark",
+      introduced: 2014,
+      material: "PLA + NFC tag",
+    },
+
+    story: [
+      "The TalTech logo is used across campus signage, digital services, and official communication.",
+      "This keychain focuses on a clean, bold rendering of the logo without extra decoration.",
+      "It’s meant to feel more like a quiet signal of affiliation than a loud piece of merch.",
+      "Scanning the keychain links the simple physical object to its digital counterpart and story.",
+    ],
   },
 ];
