@@ -64,7 +64,7 @@ export const ModelSection = ({ creatorCode, modelUrl }: Props) => {
             "
           >
             <div className="flex flex-col items-center gap-3">
-              <CodeIcon code={creatorCode} size={42} />
+              <CodeIcon code={creatorCode} size={150} />
               <span className="font-mono text-xs text-muted-foreground tracking-wide">
                 {creatorCode}
               </span>
