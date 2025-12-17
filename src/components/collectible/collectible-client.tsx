@@ -2,30 +2,19 @@
 
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { useState } from "react";
 
-import ModelViewer from "@/components/model-viewer";
 import { RarityBadge } from "@/components/rarity-badge";
 import { Rarity } from "@/types/collectible";
 import { Separator } from "@/components/ui/separator";
 import { Details } from "@/components/collectible/details";
 import Image from "next/image";
 import { parseCreatorCode } from "@/lib/utils";
-import { CodeIcon } from "./code-icon";
-import {
-  Tooltip,
-  TooltipProvider,
-  TooltipContent,
-  TooltipTrigger,
-} from "../ui/tooltip";
-import { cn } from "@/lib/utils";
 import { ModelSection } from "./model-section";
 
 import { Collectible } from "@/types/collectible";
 
 const getImageUrl = (id: string) => `/collectibles/${id}.jpg`;
-const getModelUrl = (id: string) =>
-  id === "juulius" ? "/models/library.glb" : `/models/${id}.glb`;
+const getModelUrl = (id: string) => `/models/${id}.glb`;
 
 type Props = {
   collectible: Collectible;
@@ -35,8 +24,6 @@ export const CollectibleClient = ({ collectible }: Props) => {
   const searchParams = useSearchParams();
   const rawCode = searchParams.get("code");
   const creatorCode = parseCreatorCode(rawCode);
-
-  const [showCode, setShowCode] = useState(false);
 
   const modelUrl = getModelUrl(collectible.id);
 
