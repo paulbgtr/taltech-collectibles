@@ -13,7 +13,7 @@ export const collectibles: Collectible[] = [
     meta: {
       introduced: 2019,
       designedBy: "TalTech student team",
-      material: "PLA + NFC tag",
+      material: "TPU + NFC tag",
     },
 
     story: [
@@ -57,7 +57,7 @@ export const collectibles: Collectible[] = [
     meta: {
       role: "Official university wordmark",
       introduced: 2014,
-      material: "PLA + NFC tag",
+      material: "TPU + NFC tag",
     },
 
     story: [
